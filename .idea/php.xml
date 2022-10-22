@@ -111,6 +111,8 @@
       <path value="$PROJECT_DIR$/src/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/src/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/src/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/src/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/src/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
 </project>

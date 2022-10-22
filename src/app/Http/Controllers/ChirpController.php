@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Chirp;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -40,12 +41,9 @@ class ChirpController extends Controller
      * @param Request $request
      * @return Application|RedirectResponse|Redirector
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        $validated = $request->validate([
-            'message' => 'required|string|max:255'
-        ]);
-
+        $validated = $request->validated();
         $request->user()->chirps()->create($validated);
 
         return redirect(route('chirps.index'));
@@ -82,12 +80,10 @@ class ChirpController extends Controller
      * @param Chirp $chirp
      * @return Application|Redirector|RedirectResponse
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(PostRequest $request, Chirp $chirp)
     {
         $this->authorize('update', $chirp);
-        $validated = $request->validate([
-            'message' => 'required|string|max:255'
-        ]);
+        $validated = $request->validated();
 
         $chirp->update($validated);
         return redirect(route('chirps.index'));
