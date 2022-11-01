@@ -4,10 +4,10 @@ namespace App\Notifications;
 
 use App\Models\Chirp;
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Str;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Psy\Util\Str;
 
 class NewChirp extends Notification
 {
