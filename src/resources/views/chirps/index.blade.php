@@ -1,4 +1,14 @@
 <x-app-layout>
+    @if (session('success'))
+        <div class="flash_message alert alert-success justify-content-center" role="alert">
+            <strong>{{ session('success') }}</strong>
+        </div>
+    @endif ()
+    @if (session('failed'))
+        <div class="flash_message alert alert-danger justify-content-center" role="alert">
+            <strong>{{ session('failed') }}</strong>
+        </div>
+    @endif ()
     <div class="pt-6 max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
         <form method="POST" action="{{ route('chirps.store') }}">
             @csrf
