@@ -18,6 +18,6 @@ class IndexAction
 
     public function __invoke()
     {
-        $this->responder->show($this->usecase->run());
+        return $this->responder->show($this->usecase->run());
     }
 }
