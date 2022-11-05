@@ -24,3 +24,7 @@ cp .env.example .env
 ```angular2html
 php artisan key:generate
 ```
+
+6. Check localhost<br>
+ [localhost:8080](http://localhost:8080/)
+

@@ -11,13 +11,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('chirps', \App\Http\Controllers\ChirpController::class)
-    ->only(['store', 'edit', 'update', 'destroy'])
+    ->only(['update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
-Route::middleware('auth')->group(function(){
-    Route::get('/chirps', \App\Http\Actions\Chirps\IndexAction::class)->name('chirps.index');
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::get('/chirps/index', \App\Http\Actions\Chirps\IndexAction::class)->name('chirps.index');
+    Route::get('/chirps', \App\Http\Actions\Chirps\EditAction::class)->name('chirps.edit');
     Route::post('/chirps', \App\Http\Actions\Chirps\StoreAction::class)->name('chirps.store');
-    Route::get('/chirps', \App\Http\Actions\Chirps\EditAction::class)->name('chirps.edit')->can('update');
 });
 
 require __DIR__.'/auth.php';

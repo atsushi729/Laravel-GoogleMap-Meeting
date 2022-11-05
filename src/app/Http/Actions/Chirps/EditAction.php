@@ -2,20 +2,21 @@
 
 namespace App\Http\Actions\Chirps;
 
+use App\Http\Controllers\Controller;
 use App\Http\Responders\Chirps\EditResponder;
+use App\Models\Chirp;
 
-class EditAction
+class EditAction extends Controller
 {
     private $responder;
-    private $usecase;
 
     public function __construct(EditResponder $responder)
     {
         $this->responder = $responder;
     }
 
-    public function __invoke()
+    public function __invoke(Chirp $chirp)
     {
-        $this->responder->show();
+        return $this->responder->show($chirp);
     }
 }
