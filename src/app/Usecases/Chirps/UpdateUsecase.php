@@ -4,15 +4,17 @@ namespace App\Usecases\Chirps;
 
 use App\Http\Controllers\Controller;
 use App\Http\Payload;
-use App\Models\Chirp;
 use Illuminate\Support\Facades\Log;
 
-class EditUsecase extends Controller
+class UpdateUsecase extends Controller
 {
-    public function run(Chirp $chirp)
+    public function run($request, $chirp)
     {
         try {
             $this->authorize('update', $chirp);
+            $validated = $request->validated();
+            $chirp->update($validated);
+
         } catch (\Exception $e) {
             Log::error($e);
             return (new Payload())->setStatus('FAILED');
@@ -20,3 +22,5 @@ class EditUsecase extends Controller
         return (new Payload())->setStatus('SUCCESS');
     }
 }
+
+

@@ -17,6 +17,6 @@ class EditAction extends Controller
 
     public function __invoke(Chirp $chirp)
     {
-        return $this->responder->show($chirp);
+        return $this->responder->run($chirp);
     }
 }

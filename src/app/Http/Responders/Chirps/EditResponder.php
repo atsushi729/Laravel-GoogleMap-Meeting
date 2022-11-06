@@ -2,14 +2,10 @@
 
 namespace App\Http\Responders\Chirps;
 
-use App\Http\Controllers\Controller;
-
-class EditResponder extends Controller
+class EditResponder
 {
-    public function show($chirp)
+    public function run($chirp)
     {
-        $this->authorize('update', $chirp);
-
         return view('chirps.edit', compact('chirp'));
     }
 }
