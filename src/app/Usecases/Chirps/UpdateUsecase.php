@@ -11,9 +11,8 @@ class UpdateUsecase extends Controller
     public function run($request, $chirp)
     {
         try {
-            $this->authorize('update', $chirp);
             $validated = $request->validated();
-            $chirp->update($validated);
+            $request->user()->chirps()->update($validated);
 
         } catch (\Exception $e) {
             Log::error($e);
