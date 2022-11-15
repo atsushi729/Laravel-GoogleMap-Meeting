@@ -41,3 +41,6 @@ php artisan storage:link
 ```angular2html
 php artisan migrate
 ```
+
+11. *Check localhost* <br>
+[localhost:8080](http://localhost:8080/)
