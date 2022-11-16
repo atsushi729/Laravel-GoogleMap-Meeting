@@ -111,7 +111,8 @@
       <path value="$PROJECT_DIR$/src/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/src/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/src/vendor/laravel/breeze" />
-      <path value="$PROJECT_DIR$/src/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/src/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/src/vendor/maximebf/debugbar" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

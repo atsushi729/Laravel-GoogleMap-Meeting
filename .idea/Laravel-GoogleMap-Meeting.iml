@@ -117,7 +117,8 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laravel/sanctum" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laravel/breeze" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/barryvdh/laravel-debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/maximebf/debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
