@@ -18,7 +18,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form action="" method="post">
+                    <form action="" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-sm-3">
@@ -47,6 +47,26 @@
                         </div>
                     </form>
                 </div>
+
+                <script type="text/javascript" src="http://maps.google.com/maps/api/js?key={}&language=en"></script>
+                <div id="map" class="w-100 h-100"></div>
+                <script>
+                    $(document).ready(function() {
+                        var autocomplete;
+                        var to = 'location';
+                        autocomplete = new google.maps.places.Autocomplete((document.getElementById(to)),{
+                            types:['geocode'],
+                        });
+                    });
+
+                    var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
+                    var Options = {
+                        zoom: 15,      //地図の縮尺値
+                        center: MyLatLng,    //地図の中心座標
+                        mapTypeId: 'roadmap'   //地図の種類
+                    };
+                    var map = new google.maps.Map(document.getElementById('map'), Options);
+                </script>
             </div>
         </div>
     </div>
