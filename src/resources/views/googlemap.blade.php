@@ -40,6 +40,8 @@
                                 <span>Available within a year</span>
                             </div>
                         </div>
+                        <input type="text" id="latitude" name="latitude">
+                        <input type="text" id="longitude" name="longitude">
                         <div class="row">
                             <div class="col-sm">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -58,6 +60,14 @@
                             types:['geocode'],
                         });
                     });
+
+                    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+                        var near_place = autocomplete.getPlace();
+
+                        jQuery("#latitude").val(near_place.geometry.location.lat());
+                        jQuery("#longitude").val(near_place.geometry.location.lng());
+                    })
 
                     var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
                     var Options = {
