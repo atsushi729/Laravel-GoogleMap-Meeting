@@ -49,34 +49,14 @@
                         </div>
                     </form>
                 </div>
-
-                <script type="text/javascript" src="http://maps.google.com/maps/api/js?key={}&language=en"></script>
-                <div id="map" class="w-100 h-100"></div>
-                <script>
-                    $(document).ready(function() {
-                        var autocomplete;
-                        var to = 'location';
-                        autocomplete = new google.maps.places.Autocomplete((document.getElementById(to)),{
-                            types:['geocode'],
-                        });
-                    });
-
-                    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-
-                        var near_place = autocomplete.getPlace();
-
-                        jQuery("#latitude").val(near_place.geometry.location.lat());
-                        jQuery("#longitude").val(near_place.geometry.location.lng());
-                    })
-
-                    var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
-                    var Options = {
-                        zoom: 15,      //地図の縮尺値
-                        center: MyLatLng,    //地図の中心座標
-                        mapTypeId: 'roadmap'   //地図の種類
-                    };
-                    var map = new google.maps.Map(document.getElementById('map'), Options);
-                </script>
+                <iframe id="map_canvas"
+                        width=100%
+                        height="450"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        src="https://www.google.com/maps/embed/v1/view?zoom=15&center=35.6812%2C139.7671&key=">
+                </iframe>
             </div>
         </div>
     </div>
