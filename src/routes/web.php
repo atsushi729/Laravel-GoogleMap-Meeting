@@ -13,9 +13,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-Route::get('/maps', function () {
-    return view('googlemap');
-})->middleware(['auth', 'verified'])->name('googlempa');;
+Route::get('/maps', function (){
+    return view('googlemaps');
+})->middleware(['auth', 'verified'])->name('googlemaps');;
 
 require __DIR__.'/auth.php';
