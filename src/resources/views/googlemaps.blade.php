@@ -18,13 +18,20 @@
         {{ __('Google maps') }}
     </h2>
 </x-slot>
-
+@if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+        {{ Session::get('success') }}
+    </div>
+@endif
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
-                <form action="" method="POST">
+                <form action="{{ route('addMeeting') }}" method="POST">
                     @csrf
+
+                    <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+
                     <div class="row">
                         <div class="col-sm-3">
                             <label>Location</label><br>
@@ -36,7 +43,7 @@
                         </div>
                         <div class="col-sm-3">
                             <label>Meeting time duration</label><br>
-                            <input type="number" name="time" placeholder="Meeting time (in Minutes)" required><br>
+                            <input type="number" name="meeting_time" placeholder="Meeting time (in Minutes)" required><br>
                             <span>Available (09:00 am to 06:00 pm)</span>
                         </div>
                         <div class="col-sm-3">
