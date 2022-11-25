@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('meeting', function (Blueprint $table) {
+        Schema::create('meetings', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
             $table->string('name');
@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->integer('meeting_time');
-            $table->integer('distance_time');
             $table->date('date');
             $table->timestamps();
         });
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meeting');
+        Schema::dropIfExists('meetings');
     }
 };
