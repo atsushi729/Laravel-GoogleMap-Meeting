@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,7 +11,8 @@ Route::get('/config', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $meetings = \App\Models\Meeting::where('user_id', Auth::id())->get();
+    return view('dashboard', compact('meetings'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/maps', function (){

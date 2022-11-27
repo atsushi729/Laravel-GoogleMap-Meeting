@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-sm-3">
                             <label>Date Add</label><br>
-                            <input type="date" name="date" required><br>
+                            <input type="date" name="date" required min="<?php echo date('Y-m-d'); ?>"><br>
                             <span>Available within a year</span>
                         </div>
                     </div>
@@ -172,7 +172,6 @@
             infoWindow.open(map, marker);
         });
     }
-
 </script>
 
 </body>
