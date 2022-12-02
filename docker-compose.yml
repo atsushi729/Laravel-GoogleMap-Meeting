@@ -1,11 +1,13 @@
 version: "3.9"
 services:
   app:
+    container_name: app-googleMap
     build: ./infra/php
     volumes:
       - ./src:/data
 
   web:
+    container_name: web-googleMap
     image: nginx:1.20-alpine
     ports:
       - 8080:80
@@ -15,6 +17,7 @@ services:
     working_dir: /data
 
   db:
+    container_name: db-googleMap
     build: ./infra/mysql
     volumes:
       - db-store:/var/lib/mysql
@@ -22,15 +25,16 @@ services:
       - 3308:3306
 
   node:
-    build: infra/node
+    container_name: node-googleMap
+    build: ./infra/node
     volumes:
       - ./src:/data
     working_dir: /data
     tty: true
     ports:
       - '5173:5173'
-    command: bash -c"
-      npm install
+    command: bash -c "
+      npm install;
       npm run dev;"
 
 volumes:
