@@ -24,18 +24,5 @@ services:
     ports:
       - 3308:3306
 
-  node:
-    container_name: node-googleMap
-    image: node:latest
-    volumes:
-      - ./src:/data
-    working_dir: /data
-    tty: true
-    ports:
-      - '5173:5173'
-    command: bash -c "
-      npm install;
-      npm run dev;"
-
 volumes:
   db-store:
