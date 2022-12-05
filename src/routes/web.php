@@ -20,5 +20,6 @@ Route::get('/maps', function (){
 })->middleware(['auth', 'verified'])->name('googlemaps');;
 
 Route::post('/maps', [\App\Http\Controllers\MeetingCountroller::class, 'addMeeting'])->name('addMeeting');
+Route::post('/maps', [\App\Http\Controllers\MeetingCountroller::class, 'deleteMeeting'])->name('deleteMeeting');
 
 require __DIR__.'/auth.php';
