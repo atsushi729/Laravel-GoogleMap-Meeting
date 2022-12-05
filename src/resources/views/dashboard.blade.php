@@ -34,6 +34,7 @@
                                 <th>Longitude</th>
                                 <th>Meeting Time</th>
                                 <th>Date</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,6 +48,13 @@
                                         <td>{{ $meeting->longitude }}</td>
                                         <td>{{ $meeting->meeting_time }}</td>
                                         <td>{{ $meeting->date }}</td>
+                                        <td>
+                                            <form action="{{ route('deleteMeeting') }}" method="POST">
+                                                @csrf
+                                                <div id="{{ $meeting }}"></div>
+                                                <button type="submit" class="btn btn-primary">done</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             @else
@@ -57,7 +65,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="map" class="w-full hei"></div>
+                    <div id="map" class="w-full"></div>
                 </div>
             </div>
         </div>
@@ -65,9 +73,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?language=en&region=JP&key={}" async defer></script>
 
     <script>
-        function showMap(lat, lng)
-        {
-            var coodinates = {lat:lat, lng:lng};
+        function showMap(lat, lng) {
+            var coodinates = {lat: lat, lng: lng};
             var map = document.getElementById('map');
 
             var map = new google.maps.Map(map, {
@@ -76,7 +83,11 @@
                 }
             );
         }
+
         showMap(0, 0);
+
+        var status = document.getElementById('status_change');
+        console.log($status);
     </script>
 
     </body>
