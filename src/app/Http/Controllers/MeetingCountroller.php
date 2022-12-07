@@ -32,4 +32,11 @@ class MeetingCountroller extends Controller
             return back()->with('success', 'Meeting schedule with client successfully added!');
         }
     }
+
+    public function deleteMeeting(Request $request)
+    {
+        $meeting = Meeting::find($request);
+
+        return redirect('/map');
+    }
 }

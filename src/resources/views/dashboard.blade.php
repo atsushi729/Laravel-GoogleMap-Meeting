@@ -49,11 +49,11 @@
                                         <td>{{ $meeting->meeting_time }}</td>
                                         <td>{{ $meeting->date }}</td>
                                         <td>
-                                            <form action="{{ route('deleteMeeting') }}" method="POST">
-                                                @csrf
-                                                <div id="{{ $meeting }}"></div>
-                                                <button type="submit" class="btn btn-primary">done</button>
-                                            </form>
+{{--                                            <form action="{{ route('deleteMeeting') }}" method="POST">--}}
+{{--                                                @csrf--}}
+{{--                                                <div id="{{ $meeting }}"></div>--}}
+{{--                                                <button type="submit" class="btn btn-primary">done</button>--}}
+{{--                                            </form>--}}
                                             <select name="status" class="status_change">
                                                 <option value="0" @if($meeting->status == 0) selected @endif>Pending</option>
                                                 <option value="1" @if($meeting->status == 1) selected @endif>Completed</option>
