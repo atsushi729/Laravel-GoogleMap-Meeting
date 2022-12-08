@@ -47,6 +47,16 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
+
+                        <form method="GET" action="{{ route('profile.edit') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('profile.edit')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Profile') }}
+                            </x-dropdown-link>
+                        </form>
                     </x-slot>
                 </x-dropdown>
             </div>
