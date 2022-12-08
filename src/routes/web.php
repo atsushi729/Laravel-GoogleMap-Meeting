@@ -22,4 +22,9 @@ Route::get('/maps', function (){
 Route::post('/maps', [\App\Http\Controllers\MeetingCountroller::class, 'addMeeting'])->name('addMeeting');
 Route::post('/maps/delete', [\App\Http\Controllers\MeetingCountroller::class, 'deleteMeeting'])->name('deleteMeeting');
 
+
+Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/destroy', [\App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+
 require __DIR__.'/auth.php';
