@@ -69,7 +69,7 @@
         </div>
     </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?language=en&region=JP&key={}&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?language=en&region=JP&key={{ config('app.google_map_api_key') }}&callback=initMap" async defer></script>
 
 <script>
 

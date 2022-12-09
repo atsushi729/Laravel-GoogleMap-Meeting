@@ -75,7 +75,6 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpunit/php-invoker" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpunit/php-text-template" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phar-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpunit/php-timer" />
@@ -94,8 +93,6 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/dflydev/dot-access-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/ignition" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-ignition" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/backtrace" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/ramsey/uuid" />
@@ -103,13 +100,11 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/league/config" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/league/flysystem" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/nette/utils" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/nette/schema" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/brick/math" />
-      <excludeFolder url="file://$MODULE_DIR$/src/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/http-factory" />
@@ -119,6 +114,11 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/nikic/php-parser" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
